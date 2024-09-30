@@ -27,7 +27,7 @@ export default async function() {
     const transactions = await getOnRampTransactions();
     console.log(transactions)
     return <div className="w-screen">
-        <div className="text-4xl text-[#6a51a6] pt-8 mb-8 font-bold">
+        <div className="text-4xl text-[#7546e4] pt-8 mb-8 font-bold">
             Transfer
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 p-4">
