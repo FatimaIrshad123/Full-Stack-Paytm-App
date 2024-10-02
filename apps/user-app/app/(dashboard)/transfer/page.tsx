@@ -25,7 +25,7 @@ async function getOnRampTransactions() {
 export default async function() {
     const balance = await getBalance();
     const transactions = await getOnRampTransactions();
-    console.log(transactions)
+    
     return <div className="w-screen">
         <div className="text-4xl text-[#7546e4] pt-8 mb-8 font-bold">
             Transfer
