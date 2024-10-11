@@ -1,3 +1,11 @@
+I developed a Full-Stack Paytm using modern web technologies. The project is structured as a Monorepo and integrates the following stack:
+Next.js: For server-side rendering and seamless user experiences.
+Tailwind CSS: For rapid, responsive UI development.
+PostgreSQL: As the robust relational database.
+Prisma ORM: To manage database schemas and queries effortlessly.
+TypeScript: Enhancing code quality and maintainability.
+Recoil: Managing global state effectively throughout the application.
+
 # Turborepo starter
 
 This is an official starter Turborepo.
