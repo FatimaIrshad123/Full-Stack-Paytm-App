@@ -1,12 +1,9 @@
 'use client'
-import { Button } from '@repo/ui/button'
-import { Card } from '@repo/ui/card'
 import { TextInput } from '@repo/ui/textinput'
-import { signIn, useSession } from 'next-auth/react'
+import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion';
-import { EyeIcon, EyeOffIcon, LockIcon, MailIcon } from 'lucide-react';
 
 const page = () => {
   let [phone, setPhone] = useState('');
@@ -35,7 +32,7 @@ const page = () => {
     
   }
   return (
-    <div className="bg-gradient-to-r from-indigo-600 to-purple-800 relative overflow-hidden p-8 rounded-lg shadow-xl">
+    <div className="bg-gradient-to-r from-emerald-600 to-teal-800 relative overflow-hidden p-8 rounded-lg shadow-xl">
       <section className="wrapper relative flex min-h-screen items-center justify-center overflow-hidden antialiased">
         <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full transform translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full transform -translate-x-1/2 translate-y-1/2" />
@@ -60,10 +57,10 @@ const page = () => {
                 </div>
               </div>
               
-              <h1 className="text-4xl font-bold text-gray-900 mb-2 tracking-tight">
+              <h1 className="text-4xl font-bold mb-2 tracking-tight text-teal-800 bg-clip-text text-transparent">
                 Welcome to SecurePay
               </h1>
-              <p className="text-lg text-gray-600 max-w-md mx-auto">
+              <p className="bg-gradient-to-r from-emerald-400 to-teal-800 bg-clip-text text-transparent text-lg font-bold">
                 Log in to access your account and manage your transactions securely
               </p>
             </div>
@@ -93,14 +90,14 @@ const page = () => {
                     Remember me
                   </label>
                 </div>
-                <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                <a href="#" className="text-emerald-600 hover:text-emerald-500">
                   Forgot password?
                 </a>
               </div>
 
               <button
                 onClick={handleSubmit}
-                className="bg-gradient-to-r from-indigo-600 to-purple-800 text-white py-2.5 px-5 rounded-lg font-medium text-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="bg-gradient-to-r from-emerald-600 to-teal-800 text-white py-2.5 px-5 rounded-lg font-medium text-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 Sign in
               </button>
