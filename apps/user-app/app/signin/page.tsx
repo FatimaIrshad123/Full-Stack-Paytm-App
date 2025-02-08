@@ -6,28 +6,19 @@ import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion';
-
+import { EyeIcon, EyeOffIcon, LockIcon, MailIcon } from 'lucide-react';
 
 const page = () => {
   let [phone, setPhone] = useState('');
   let [password, setPassword] = useState('')
-  //const phone = useRef('');
-  //const password = useRef('');
   const router = useRouter();
 
   const handlePhoneChange = (e: any) => {
-    console.log('eeeeeeeeeeeeeeee',e.value)
-    let value = e.target.value;
     setPhone(e.target.value)
-    console.log('value',value)
-    //phone.current = value;
-    console.log('phone.current',phone)
   }
 
   const handlePasswordChange = (e: any) => {
-    let value = e.target.value;
     setPassword(e.target.value);
-    console.log('password',password)
   }
 
   const handleSubmit = async (e:any) => {
@@ -35,49 +26,103 @@ const page = () => {
       const res = await signIn('credentials', {
         phone: phone,
         password: password,
+        redirect:false
       });
       router.push('/')
-      console.log('res',res)
     }catch (error){
       console.log(error)
     }
     
   }
   return (
-    <section className="wrapper relative flex min-h-screen items-center justify-center overflow-hidden antialiased">
-      <Card title='Signin'>
-        <motion.div
-          initial={{ y: -40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            duration: 0.5,
-            ease: 'easeInOut',
-            type: 'spring',
-            damping: 10,
-          }}
-          className="flex w-full flex-col justify-between gap-12 rounded-2xl bg-primary/5 p-8 sm:max-w-[26rem]"
-        >
-          <div className="flex flex-col text-center">
-            <h2 className="text-3xl font-semibold tracking-tighter xl:text-4xl">
-              Welcome to{' '}
-              <span className="bg-gradient-to-b from-blue-400 to-blue-700 bg-clip-text pr-1 font-black tracking-tighter text-transparent">
-                Paytm
-              </span>
-            </h2>
-            <p className="text-lg font-medium tracking-tighter text-primary/75 md:text-xl">
-              Log in to access your account!
-            </p>
-          </div>
-          <div className="flex flex-col gap-8">
-            <div className="grid w-full items-center gap-4">
-              <TextInput placeholder={'Phone Number'} label={'Phone'} onChange={handlePhoneChange}/>
-              <TextInput placeholder={'Password'} label={'Password'} onChange={handlePasswordChange}/>
+    <div className="bg-gradient-to-r from-indigo-600 to-purple-800 relative overflow-hidden p-8 rounded-lg shadow-xl">
+      <section className="wrapper relative flex min-h-screen items-center justify-center overflow-hidden antialiased">
+        <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full transform translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full transform -translate-x-1/2 translate-y-1/2" />
+        <div className="bg-white rounded-lg shadow-lg p-5 relative z-10">
+          <motion.div
+            initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              ease: 'easeInOut',
+              type: 'spring',
+              damping: 10,
+            }}
+            className="flex w-full flex-col justify-between gap-12 rounded-2xl bg-white p-8 sm:max-w-[26rem]"
+          >
+            <div className="flex flex-col text-center">
+              <div className="mb-4 flex justify-center">
+                <div className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full">
+                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                  <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse delay-75"></span>
+                  <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse delay-150"></span>
+                </div>
+              </div>
+              
+              <h1 className="text-4xl font-bold text-gray-900 mb-2 tracking-tight">
+                Welcome to SecurePay
+              </h1>
+              <p className="text-lg text-gray-600 max-w-md mx-auto">
+                Log in to access your account and manage your transactions securely
+              </p>
             </div>
-            <button onClick={handleSubmit} className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Signin</button>
-          </div>
-      </motion.div>
-      </Card>
-    </section>
+
+            <div className="flex flex-col gap-8">
+              <div className="grid w-full items-center gap-4">
+                <TextInput 
+                  placeholder="22222222" 
+                  label="Phone" 
+                  onChange={handlePhoneChange}
+                />
+                <TextInput 
+                  placeholder="••••••••" 
+                  label="Password" 
+                  onChange={handlePasswordChange}
+                />
+              </div>
+              
+              <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center">
+                  <input
+                    id="remember-me"
+                    type="checkbox"
+                    className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                  />
+                  <label htmlFor="remember-me" className="ml-2 text-gray-600">
+                    Remember me
+                  </label>
+                </div>
+                <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                  Forgot password?
+                </a>
+              </div>
+
+              <button
+                onClick={handleSubmit}
+                className="bg-gradient-to-r from-indigo-600 to-purple-800 text-white py-2.5 px-5 rounded-lg font-medium text-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              >
+                Sign in
+              </button>
+
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-gray-300" />
+                </div>
+                <div className="relative flex justify-center text-sm">
+                  <span className="px-2 bg-white text-gray-500">Or continue with</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                Phone: 2222222222
+                Password: bob
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   )
 }
 
