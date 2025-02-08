@@ -26,6 +26,7 @@ export const authOptions = {
                 console.log(`hashed password from DB is ${hashedPassword}`)
                 const passwordValidation = await bcrypt.compare(credentials.password, existingUser.password);
                 if (passwordValidation) {
+                    console.log('existingUser.id.toString()',existingUser.id.toString())
                     return {
                         id: existingUser.id.toString(),
                         name: existingUser.name,

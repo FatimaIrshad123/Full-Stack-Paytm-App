@@ -9,8 +9,9 @@ export async function getBalance() {
             userId: Number(session?.user?.id)
         }
     });
+    
     return {
-        amount: balance?.amount || 0,
+        amount: balance?.amount || 200000,
         locked: balance?.locked || 0
     }
 }

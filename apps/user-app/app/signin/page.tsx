@@ -25,6 +25,7 @@ const page = () => {
         password: password,
         redirect:false
       });
+      console.log('res',res)
       router.push('/')
     }catch (error){
       console.log(error)

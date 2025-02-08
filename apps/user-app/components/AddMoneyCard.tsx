@@ -9,11 +9,11 @@ import { TextInput } from "@repo/ui/textinput";
 import { createOnRampTransaction } from "../app/lib/actions/createOnRamptxn";
 
 const SUPPORTED_BANKS = [{
-    name: "HDFC Bank",
-    redirectUrl: "https://netbanking.hdfcbank.com"
+    name: "HBL Bank",
+    redirectUrl: "https://www.hbl.com/"
 }, {
-    name: "Axis Bank",
-    redirectUrl: "https://www.axisbank.com/"
+    name: "UBL Bank",
+    redirectUrl: "https://www.ubldigital.com/"
 }];
 
 export const AddMoney = () => {
