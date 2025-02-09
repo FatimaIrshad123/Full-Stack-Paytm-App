@@ -1,6 +1,7 @@
 'use client'
-import React from "react";
+import React, { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { Menu, X } from "lucide-react";
 
 export const SidebarItem = ({ href, title, icon }: { href: string; title: string; icon: React.ReactNode }) => {
     const router = useRouter();
@@ -37,7 +38,7 @@ export const SidebarItem = ({ href, title, icon }: { href: string; title: string
 
             {/* Title */}
             <div className={`
-                font-medium
+                font-medium hidden md:block
                 transition-colors duration-200
                 ${selected 
                     ? 'text-teal-800 font-semibold' 
@@ -49,7 +50,7 @@ export const SidebarItem = ({ href, title, icon }: { href: string; title: string
 
             {/* Active indicator dot */}
             {selected && (
-                <div className="absolute right-4 w-1.5 h-1.5 rounded-full bg-teal-600" />
+                <div className="absolute md:right-4 right-2 w-1.5 h-1.5 rounded-full bg-teal-600" />
             )}
         </div>
     );
