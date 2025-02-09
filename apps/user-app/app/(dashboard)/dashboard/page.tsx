@@ -4,9 +4,8 @@ import {Wallet} from "lucide-react";
 
 export default async function() {
     const balance = await getBalance();
-    console.log('balance',balance)
     const greeting = Greeting();
-    console.log('greeting',greeting)
+    
     return (
         <div className="w-full max-w-7xl mx-auto p-6 space-y-6">
             <h2 className="text-4xl text-teal-800 pt-8 mb-8 font-bold">{greeting}</h2>

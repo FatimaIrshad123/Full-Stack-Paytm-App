@@ -28,18 +28,18 @@ export default async function (){
             {/*Topbar*/}
             <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl shadow-xl p-8 mb-8">
                 <div className="flex items-center justify-between">
-                <div>
-                    <h1 className="text-4xl font-bold text-white mb-2">Person to Person Transfer Money</h1>
-                    <p className="text-emerald-100">Quick, secure, and reliable transfers</p>
-                </div>
-                <div className="hidden md:flex items-center space-x-4">
-                    <button className="p-2 rounded-full bg-emerald-500 bg-opacity-20 hover:bg-opacity-30 transition-all">
-                    <Bell className="w-6 h-6 text-white" />
-                    </button>
-                    <button className="p-2 rounded-full bg-emerald-500 bg-opacity-20 hover:bg-opacity-30 transition-all">
-                    <Shield className="w-6 h-6 text-white" />
-                    </button>
-                </div>
+                    <div>
+                        <h1 className="text-4xl font-bold text-white mb-2">Person to Person Transfer Money</h1>
+                        <p className="text-emerald-100">Quick, secure, and reliable transfers</p>
+                    </div>
+                    <div className="hidden md:flex items-center space-x-4">
+                        <button className="p-2 rounded-full bg-emerald-500 bg-opacity-20 hover:bg-opacity-30 transition-all">
+                            <Bell className="w-6 h-6 text-white" />
+                        </button>
+                        <button className="p-2 rounded-full bg-emerald-500 bg-opacity-20 hover:bg-opacity-30 transition-all">
+                            <Shield className="w-6 h-6 text-white" />
+                        </button>
+                    </div>
                 </div>
             </div>
             <div>
