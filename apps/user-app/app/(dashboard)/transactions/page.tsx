@@ -62,6 +62,7 @@ const TransactionHistory = async() => {
   };
 
   return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-50 mt-5 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-600 shadow-emerald-300 shadow-lg mb-5">
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
@@ -176,6 +177,7 @@ const TransactionHistory = async() => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
