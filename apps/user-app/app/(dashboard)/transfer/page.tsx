@@ -115,4 +115,5 @@ export default async function() {
         </div>
       </div>
     </div>
-)}
+  )
+}
