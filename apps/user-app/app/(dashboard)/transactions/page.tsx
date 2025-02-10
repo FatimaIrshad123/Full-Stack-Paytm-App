@@ -41,8 +41,8 @@ const TransactionHistory = async() => {
     const transactionhistory = await getOnRampTransactions();
     const transferhistory = await getOnRampTransfers();
     
-    const totalAmountRecieved = transactionhistory.reduce((sum, x) => sum + x.amount / 100, 0);
-    const totalAmountSend = transferhistory.reduce((sum, x) => sum + x.amount / 100, 0);
+    const totalAmountRecieved = transactionhistory.reduce((sum:any, x:any) => sum + x.amount / 100, 0);
+    const totalAmountSend = transferhistory.reduce((sum:any, x:any) => sum + x.amount / 100, 0);
 
   const getStatusColor = (status:any) => {
     switch (status) {
