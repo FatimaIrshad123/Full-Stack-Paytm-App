@@ -134,7 +134,7 @@ const TransactionHistory = async() => {
                   </tr>
                 </thead>
                 <tbody>
-                  {transactionhistory.map((transaction) => (
+                  {transactionhistory.map((transaction:any) => (
                     <tr key={transaction.status} className="border-b hover:bg-gray-50">
                       <td className="py-4 px-4">
                         <div className="flex items-center gap-3">
