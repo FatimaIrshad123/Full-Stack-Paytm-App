@@ -23,7 +23,7 @@ export const Appbar = ({
                     <div className="h-4 w-4 bg-white rounded-full" />
                     </div>
                     <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-800 bg-clip-text text-transparent">
-                    PayTM
+                        Secure Pay
                     </span>
                 </div>
                 {/* Auth Button */}

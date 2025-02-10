@@ -2,36 +2,49 @@
 import { TextInput } from '@repo/ui/textinput'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { motion } from 'framer-motion';
+import { toast } from 'react-toastify'
+import { Send } from 'lucide-react'
 
 const page = () => {
-  let [phone, setPhone] = useState('');
-  let [password, setPassword] = useState('')
+  //let [phone, setPhone] = useState('');
+  //let [password, setPassword] = useState('')
   const router = useRouter();
-
+  const phone = useRef('');
+  const password = useRef('');
+console.log('phone',phone);
+console.log('password',password)
   const handlePhoneChange = (e: any) => {
-    setPhone(e.target.value)
+    //setPhone(e.target.value)
+    console.log('e',e)
+    //let value = e.target.value;
+    phone.current = e;
   }
 
   const handlePasswordChange = (e: any) => {
-    setPassword(e.target.value);
+    //setPassword(e.target.value);
+    //let value = e.target.value;
+    password.current = e;
   }
 
   const handleSubmit = async (e:any) => {
     try {
       const res = await signIn('credentials', {
-        phone: phone,
-        password: password,
+        phone: phone.current,
+        password: password.current,
         redirect:false
       });
+      toast.success("Signin successful!", {position: "top-right"});
       console.log('res',res)
       router.push('/')
     }catch (error){
-      console.log(error)
+      console.log(error);
+      toast.error("Signin failed. Please try again.", {position: "top-right"});
     }
     
   }
+  //const [isLoading, setIsLoading] = useState(false);
   return (
     <div className="bg-gradient-to-r from-emerald-600 to-teal-800 relative overflow-hidden p-8 rounded-lg shadow-xl">
       <section className="wrapper relative flex min-h-screen items-center justify-center overflow-hidden antialiased">
@@ -58,7 +71,7 @@ const page = () => {
                 </div>
               </div>
               
-              <h1 className="text-4xl font-bold mb-2 tracking-tight text-teal-800 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold mb-2 tracking-tight text-teal-800">
                 Welcome to SecurePay
               </h1>
               <p className="bg-gradient-to-r from-emerald-400 to-teal-800 bg-clip-text text-transparent text-lg font-bold">
@@ -72,11 +85,13 @@ const page = () => {
                   placeholder="22222222" 
                   label="Phone" 
                   onChange={handlePhoneChange}
+                  value={phone}
                 />
                 <TextInput 
                   placeholder="••••••••" 
                   label="Password" 
                   onChange={handlePasswordChange}
+                  value={password}
                 />
               </div>
               

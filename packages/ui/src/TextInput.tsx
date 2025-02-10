@@ -3,11 +3,13 @@
 export const TextInput = ({
     placeholder,
     onChange,
-    label
+    label,
+    value
 }: {
     placeholder: string;
     onChange: (value: string) => void;
     label: string;
+    value?: any
 }) => {
     return <div className="pt-2">
         <label className="block mb-2 text-sm font-medium text-gray-900">{label}</label>
