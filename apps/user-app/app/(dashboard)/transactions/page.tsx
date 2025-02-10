@@ -13,7 +13,7 @@ async function getOnRampTransactions() {
             userId: Number(session?.user?.id)
         }
     });
-    return txns.map(t => ({
+    return txns.map((t:any) => ({
         time: t.startTime,
         amount: t.amount,
         status: t.status,
@@ -28,7 +28,7 @@ async function getOnRampTransfers() {
             fromUserId: Number(session?.user?.id)
         }
     });
-    return txns.map(t => ({
+    return txns.map((t:any) => ({
         timeStamp: t.timestamp,
         amount: t.amount,
         fromUserId: t.fromUserId,
