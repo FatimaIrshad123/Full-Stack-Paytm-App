@@ -2,33 +2,25 @@
 import { TextInput } from '@repo/ui/textinput'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify'
-import { Send } from 'lucide-react'
 
 const page = () => {
-  //let [phone, setPhone] = useState('');
-  //let [password, setPassword] = useState('')
   const router = useRouter();
   const phone = useRef('');
   const password = useRef('');
-console.log('phone',phone);
-console.log('password',password)
+
   const handlePhoneChange = (e: any) => {
-    //setPhone(e.target.value)
-    console.log('e',e)
-    //let value = e.target.value;
     phone.current = e;
   }
 
   const handlePasswordChange = (e: any) => {
-    //setPassword(e.target.value);
-    //let value = e.target.value;
     password.current = e;
   }
 
   const handleSubmit = async (e:any) => {
+    e.preventDefault();
     try {
       const res = await signIn('credentials', {
         phone: phone.current,

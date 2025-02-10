@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server"
+/*import { NextResponse } from "next/server"
 import { PrismaClient } from "@repo/db/client";
 
 const client = new PrismaClient();
@@ -13,4 +13,4 @@ export const GET = async () => {
     return NextResponse.json({
         message: "hi there"
     })
-}
+}*/
