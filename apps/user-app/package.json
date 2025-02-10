@@ -19,7 +19,9 @@
     "next-auth": "^4.24.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-toastify": "^11.0.3"
+    "react-toastify": "^11.0.3",
+    "prisma": "latest",
+    "@prisma/client": "latest"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.1.1",
