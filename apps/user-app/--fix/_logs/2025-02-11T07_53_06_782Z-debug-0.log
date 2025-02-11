@@ -1,0 +1,19 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v23.5.0
+3 silly config load:file:C:\Users\MUDASIR IRSHAD\AppData\Roaming\nvm\v23.5.0\node_modules\npm\npmrc
+4 info config found workspace root at D:\cohort\project\Full-Stack-Paytm-App
+5 silly config load:file:D:\cohort\project\Full-Stack-Paytm-App\.npmrc
+6 silly config load:file:C:\Users\MUDASIR IRSHAD\.npmrc
+7 silly config load:file:C:\Program Files\nodejs\etc\npmrc
+8 verbose title npm eslint
+9 verbose argv "eslint" "--cache" "--fix"
+10 verbose logfile logs-max:10 dir:D:\cohort\project\Full-Stack-Paytm-App\apps\user-app\--fix\_logs\2025-02-11T07_53_06_782Z-
+11 verbose logfile D:\cohort\project\Full-Stack-Paytm-App\apps\user-app\--fix\_logs\2025-02-11T07_53_06_782Z-debug-0.log
+12 silly logfile done cleaning log files
+13 verbose cwd D:\cohort\project\Full-Stack-Paytm-App\apps\user-app
+14 verbose os Windows_NT 10.0.19045
+15 verbose node v23.5.0
+16 verbose npm  v10.9.2
+17 verbose exit 1
+18 verbose code 1

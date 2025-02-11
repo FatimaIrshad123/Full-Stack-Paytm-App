@@ -1,10 +1,11 @@
-
 import React, {  } from 'react';
 import { ArrowUpRight, ArrowDownLeft, Clock, Bell, Shield } from 'lucide-react';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../../lib/auth';
 import prisma from '@repo/db/client';
 import { getBalance } from '../../lib/actions/getBalance';
+
+export const dynamic = "force-dynamic";
 
 async function getOnRampTransactions() {
     const session = await getServerSession(authOptions);

@@ -7,6 +7,8 @@ import { authOptions } from "../../lib/auth";
 import { getBalance } from "../../lib/actions/getBalance";
 import {Wallet,Clock, Bell, Shield, ArrowRight, CreditCard} from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 async function getOnRampTransactions() {
     const session = await getServerSession(authOptions);
     const txns = await prisma.onRampTransaction.findMany({

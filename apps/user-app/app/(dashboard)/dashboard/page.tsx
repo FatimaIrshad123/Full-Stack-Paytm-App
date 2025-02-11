@@ -2,6 +2,8 @@ import Greeting from "../../../components/Greeting";
 import { getBalance } from "../../lib/actions/getBalance"
 import {Wallet} from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function() {
     const balance = await getBalance();
     const greeting = Greeting();
