@@ -9,7 +9,7 @@ import { Send } from "lucide-react";
 export function SendCard() {
     const [number, setNumber] = useState("");
     const [amount, setAmount] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading] = useState(false);
 
     return ( 
         <div className="w-full">
