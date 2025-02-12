@@ -19,23 +19,42 @@ const page = () => {
     password.current = e;
   }
 
-  const handleSubmit = async (e:any) => {
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    
+    const result = await signIn("credentials", {
+      phone: phone.current,
+      password: password.current,
+      redirect: false, // Ensure redirect is false so you can handle errors
+    });
+  
+    if (result?.error) {
+      toast.error("Signin failed. Please try again.", { position: "top-right" });
+      console.log("Signin error:", result.error);
+    } else {
+      toast.success("Signin successful!", { position: "top-right" });
+      router.push("/");
+    }
+  };
+  
+
+  /*const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
-      const res = await signIn('credentials', {
+      await signIn('credentials', {
         phone: phone.current,
         password: password.current,
         redirect:false
       });
       toast.success("Signin successful!", {position: "top-right"});
-      console.log('res',res)
+      //console.log('res',res?.error)
       router.push('/')
     }catch (error){
-      console.log(error);
+      console.log('error',error);
       toast.error("Signin failed. Please try again.", {position: "top-right"});
     }
     
-  }
+  }*/
   //const [isLoading, setIsLoading] = useState(false);
   return (
     <div className="bg-gradient-to-r from-emerald-600 to-teal-800 relative overflow-hidden p-8 rounded-lg shadow-xl">
