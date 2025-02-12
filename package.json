@@ -22,9 +22,9 @@
     "packages/*"
   ],
   "dependencies": {
-    "@prisma/client": "^5.22.0"
+    "@prisma/client": "^6.3.1"
   },
-    "prisma": {
-      "schema": "packages/db/prisma/schema.prisma"
-    }
+  "prisma": {
+    "schema": "packages/db/prisma/schema.prisma"
+  }
 }
