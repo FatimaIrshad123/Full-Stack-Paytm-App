@@ -25,7 +25,7 @@ const page = () => {
     const result = await signIn("credentials", {
       phone: phone.current,
       password: password.current,
-      redirect: false, // Ensure redirect is false so you can handle errors
+      redirect: false,
     });
   
     if (result?.error) {
@@ -37,25 +37,6 @@ const page = () => {
     }
   };
   
-
-  /*const handleSubmit = async (e:any) => {
-    e.preventDefault();
-    try {
-      await signIn('credentials', {
-        phone: phone.current,
-        password: password.current,
-        redirect:false
-      });
-      toast.success("Signin successful!", {position: "top-right"});
-      //console.log('res',res?.error)
-      router.push('/')
-    }catch (error){
-      console.log('error',error);
-      toast.error("Signin failed. Please try again.", {position: "top-right"});
-    }
-    
-  }*/
-  //const [isLoading, setIsLoading] = useState(false);
   return (
     <div className="bg-gradient-to-r from-emerald-600 to-teal-800 relative overflow-hidden p-8 rounded-lg shadow-xl">
       <section className="wrapper relative flex min-h-screen items-center justify-center overflow-hidden antialiased">
